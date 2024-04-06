@@ -35,7 +35,9 @@ const App = () => {
     <div className="main__wrap">
       <main className="container">
         <div>
-          <h2>Answer the following questions:</h2>
+          <h2>TODO</h2>
+          {score && <p>Score: {score}</p>}
+          <p>Average Score: {calculateAverageRating()}</p>
           <ul>
             {Object.entries(QUESTIONS).map(([questionId, question]) => (
               <li key={questionId}>
@@ -56,8 +58,7 @@ const App = () => {
             ))}
           </ul>
           <button onClick={calculateScore}>Calculate Score</button>
-          {score && <p>Your score is: {score}%</p>}
-          <p>Average rating for all runs: {calculateAverageRating()}%</p>
+
         </div>
       </main>
     </div>
